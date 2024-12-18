@@ -15,14 +15,14 @@
 .rebonBox1 { position: relative;width: 180px;height: 140px;}
 
 
-.paging_comm .btn_page { float: left; width: 36px; height: 35px; font-weight: bold; font-size: 12px; font-family: verdana; background: url(/images/paging.gif) no-repeat 0 0; color: #30323f; line-height: 30px; text-align: center; }
+.paging_comm .btn_page { float: left; width: 36px; height: 35px; font-weight: bold; font-size: 12px; font-family: verdana; background: url(../images/paging.gif) no-repeat 0 0; color: #30323f; line-height: 30px; text-align: center; }
 .paging_comm a.btn_prev { background-position: 0 -38px; }
 .paging_comm .btn_prev { position: relative; width: 82px;  background-position: 0 -38px;  }
 .paging_comm a.btn_next { background-position: -82px -38px; }
 .paging_comm .btn_next { width: 82px; margin-left: -1px; background-position: -82px -38px;  }
 .paging_comm ._current { background-position: -38px -0px; width:38px; color:#d92f3a}
 
-.paging_comm_q .btn_page { float: left; width: 36px; height: 35px; font-weight: bold; font-size: 12px; font-family: verdana; background: url(/images/paging.gif) no-repeat 0 0; color: #30323f; line-height: 30px; text-align: center; }
+.paging_comm_q .btn_page { float: left; width: 36px; height: 35px; font-weight: bold; font-size: 12px; font-family: verdana; background: url(../images/paging.gif) no-repeat 0 0; color: #30323f; line-height: 30px; text-align: center; }
 .paging_comm_q a.btn_prev { background-position: 0 -38px; }
 .paging_comm_q .btn_prev { position: relative; width: 82px;  background-position: 0 -38px;  }
 .paging_comm_q a.btn_next { background-position: -82px -38px; }
@@ -73,7 +73,7 @@
 	-moz-box-shadow: 10px 10px 20px #000; background:#fff; /* Firefox */
 	-webkit-box-shadow: 10px 10px 20px #000; background:#fff; /* Safari and Chrome */
 	box-shadow: 10px 10px 20px #000; background:#fff; /* Opera 10.5+, future browsers and IE6+ using IE-CSS3 */
-	 behavior: url(/images/01_potal/main/ie-css3.htc); background:#fff; /* This lets IE know to call the script on all elements which get the 'box' class */"
+	 behavior: url(../images/01_potal/main/ie-css3.htc); background:#fff; /* This lets IE know to call the script on all elements which get the 'box' class */"
 
 /* 기본 css */
 .fl{ float:left; }
@@ -126,7 +126,7 @@
 
 /* Layer login box */
 .login_popupBox { border-right: 1px solid #969696;border-left: 1px solid #969696;border-bottom: 1px solid #969696;}
-.loginup_inBox { position: relative;width: 479px;height: 355px;background: url(/images/loginpopup_bg.gif) no-repeat;margin: 0 auto;}
+.loginup_inBox { position: relative;width: 479px;height: 355px;background: url(../images/loginpopup_bg.gif) no-repeat;margin: 0 auto;}
 .login_popupB { position: absolute;top: 28px;left: 40px;}
 
 .layer-popup {display:none; position:fixed; left:50%; top:175px; z-index:10; padding:30px 30px 35px; margin-left:-235px; width:500px;height:500px;}
@@ -147,7 +147,7 @@
 .sub_cate_link a:visited{  font-size: 12px;}
 .sub_cate_link a:hover{ font-size: 12px; text-decoration:underline;}
 
-.select_box{ background: url(/images/select_bg3.gif) no-repeat 100% -2px #ffffff; padding-right: 4px;}
+.select_box{ background: url(../images/select_bg3.gif) no-repeat 100% -2px #ffffff; padding-right: 4px;}
 .input_box_3d {  margin: auto; border: 1px solid #8B8B8B; border-right: 1px solid #D3D3D3; border-bottom: 1px solid #D3D3D3; background-color: #ffffff; overflow: hidden; }
 
 .input_selectm { height: 20px; margin: 4px 2px 4px 2px; padding-left: 0px; -webkit-padding-start: 2px; }
@@ -175,7 +175,7 @@ select { -webkit-appearance: listbox; background: none; cursor: pointer; text-sh
 
 /* 상단 검색 박스 */
 .search-popup {display:none; position:absolute; left:50%; top:175px; z-index:999999; margin-left:-235px; background-color:#fff; }
-.search_Box1 { position: relative;width: 500px;height: 41px;background: url(/images/search_boximg1.gif) no-repeat;}
+.search_Box1 { position: relative;width: 500px;height: 41px;background: url(../images/search_boximg1.gif) no-repeat;}
 .search_Box1 img { position: absolute;top: 10px;right: 10px;}
 .search_Box2 { position:relative;width: 456px;height: 35px;vertical-align:middle;}
 

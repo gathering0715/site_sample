@@ -19,8 +19,8 @@
 .ui-datepicker-calendar thead td:first-child { border-left-color: #333; }
 .ui-datepicker-prev, .ui-datepicker-next { display: inline-block; width: 14px; height: 14px; }
 .ui-datepicker-prev span, .ui-datepicker-next span { display: none; }
-.ui-datepicker-prev { cursor: pointer; position: absolute; top: 8px; left: 5px; background: url(../images/calarrow.png) no-repeat 3px -39px; }
-.ui-datepicker-next { cursor: pointer; position: absolute; top: 8px; right: 5px; background: url(../images/calarrow.png) no-repeat 3px 1px; }
+.ui-datepicker-prev { cursor: pointer; position: absolute; top: 8px; left: 5px; background: url(..../images/calarrow.png) no-repeat 3px -39px; }
+.ui-datepicker-next { cursor: pointer; position: absolute; top: 8px; right: 5px; background: url(..../images/calarrow.png) no-repeat 3px 1px; }
 
 .ui-datepicker-inline { padding: 0; background: #fff; border: 0 !important; }
 .ui-datepicker-inline .ui-datepicker-calendar { width: 100%; border: 0; }
@@ -182,7 +182,7 @@
 
 .ui-slider-horizontal { display: block; height: 5px; }
 .ui-slider-horizontal a { 
-	position: absolute; top: -5px; width: 17px; height: 14px; background: url(../images/sliderhor.png) 0 0;
+	position: absolute; top: -5px; width: 17px; height: 14px; background: url(..../images/sliderhor.png) 0 0;
 }
 .ui-slider-horizontal a.ui-slider-handle { margin-left: -8px; }
 .ui-slider-horizontal a:hover, .ui-slider-horizontal a.ui-state-active { 
@@ -197,7 +197,7 @@
 .ui-slider-vertical { width: 2px; margin: 10px 0 2px 0; padding-top: 10px;}
 .ui-slider-vertical a { position: absolute; left: -3px; }
 .ui-slider-vertical a { 
-	width: 14px; height: 17px; position: absolute; left: -6px; background: url(../images/sliderver.png) 0 0; 
+	width: 14px; height: 17px; position: absolute; left: -6px; background: url(..../images/sliderver.png) 0 0;
 }
 .ui-slider-vertical a:hover, .ui-slider-vertical a.ui-state-active {
 	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.3); -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.3); box-shadow: 0 0 3px rgba(0,0,0,0.3); }
@@ -256,7 +256,7 @@
 	padding: 1px;
 	height: 20px;
 	border: 0;
-	background: transparent url(../images/close.png) no-repeat center center;
+	background: transparent url(..../images/close.png) no-repeat center center;
 	opacity: 0.4;
 }
 .ui-dialog .ui-dialog-titlebar-close:hover {

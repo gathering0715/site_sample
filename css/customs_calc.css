@@ -104,7 +104,7 @@
 	height: 25px;
 	line-height: 25px;
 	padding: 0 10px;
-	background: url(/images/customs_calc/selec1.png) 90% 50% no-repeat;
+	background: url(../images/customs_calc/selec1.png) 90% 50% no-repeat;
 }
 .calc_btn {
 	background: #ff5757;

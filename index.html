@@ -45,8 +45,6 @@
 
 <link rel="stylesheet" href="./css/jquery.ui.css" type="text/css" />
 
-
-
 <script type="text/javascript">
 var user_id = "";
 var mobile_chk = false;
@@ -85,15 +83,7 @@ var mobile_chk = false;
 	background:url(/images/bg-black.png);
 }
 </style>
-<script type="text/javascript">
-<!--
-function bluring(){
-if(event.srcElement.tagName=="A"||event.srcElement.tagName=="IMG") document.body.focus();
-}
-document.onfocusin=bluring;
-//-->
 
-</script>
 <script>
 	jQuery(document).ready(function(){
 
@@ -114,10 +104,6 @@ document.onfocusin=bluring;
 <div id="SLB_loading"><!-- <img src="./images/bigWaiting.gif"> --></div>
 <!-- 라이트박스 레이어 지정 -->
 
-
-
-
-
 <script type="text/javascript">
 $(function(){
 	$('.main_close').click(function(){
@@ -136,13 +122,9 @@ $(function(){
 $(document).ready(function () {
 //마우스 오버 툴팁레이어
 	$('.tdTip').mouseenter(function(e) {
-
-
 		var t = e.pageY - 50; //상단 좌표 위치 안맞을시 e.pageY
 		var l = e.pageX - 250; //좌측 좌표 위치 안맞을시 e.pageX
 		$('.tooltiplayer').css({ "top": t, "left": l }).show();
-
-
 	});
 	$('.tdTip').mouseleave(function() {
 		$('.tooltiplayer').hide(); //레이어 숨기기
@@ -215,10 +197,6 @@ $(".est_app_div").mouseleave(function(){
 
     <ul class="head">
 		<li class="head_app"><a href="javascript:;" onclick="javascript:$('.est_app_div').show();" onmouseover="javascript:$('.est_app_div').show();"><img src="./images/heyjapan/20180627_01_wh.png">앱 설치</a>
-		<!--<span>|</span>
-		<a href="http://theeuro.co.kr/?ad=old_interplanet" target="_blank"><img src='/images/integ/icon-air2.png'>유럽 구매대행</a>-->
-		<!--<span>|</span>
-		<a href='https://japantop10.co.kr/?ad=inter_baro' target='_blank'><img src='/images/integ/icon-best2.png'>해외 베스트상품 재팬탑텐!</a>-->
 		</li>
 		<li class="head_txt" style="width: auto; float: right">
 					<a href="/auth/login"><strong>로그인</strong></a><span>|</span>
@@ -450,7 +428,6 @@ $(".est_app_div").mouseleave(function(){
 
 
 <script type="text/javascript">
-// top 메뉴 이미지 롤
 $(function(){
 	$(".menu_rollover").mouseover(function(){
 		 var temp = $(this).attr("src");
@@ -522,12 +499,6 @@ function mcancelclosetime()
 		closetimer = null;
 	}
 }
-
-// close layer when click-out
-//document.onclick = mclose;
-
-
-
 
 
 function select_chk(){
@@ -1016,31 +987,7 @@ $(window).load(function(){
 		.review_line .rl_2{padding:0 10px; overflow: hidden; position: relative; width: 207px; background: #f1f1f1;  height: 24px;line-height: 24px; float: left; }
 		.texts li{float:none; overflow: hidden}
 		</style>
-        <script>
- $(document).ready(function() {
- $('#after_rolling').vTicker();
 
-  // 배너 카운트
-  $('a[banner-type="img"]').on("click",function(e){
-    e.preventDefault();
-    var b_idx = $(this).attr('banner-idx');
-    var href = $(this).attr('href');
-
-  	$.ajax({
-  		type: 'post',
-  		url: "/hey/banner_count/"+b_idx+"",
-  		dataType: 'html',
-  		data: {  },
-  		success: function(d) {
-  		},
-  		cache: false
-  	});
-
-    location.href=href;
-  });
-
-});
-		</script>
 
 	  </span>
 	  </li>
@@ -1071,30 +1018,30 @@ $('#auc_proc').click(function(){
 <!-- 배너 끝 -->
 <!-- 페이지 내용 끝 -->
 <div id="bottom">
-    <ul>
-      <li class="bm_menu"><a href="http://www.interplanet.co.kr" target="_blank">회사소개</a><span>|</span><a href="./company/terms">이용약관</a><span>|</span><a href="./company/private_all"><strong style="color:red">개인정보처리방침</strong></a><span>|</span><a href="./cs/use_info?md=1">이용안내</a><span>|</span><a href="mailto:help@interplanet.co.kr" target='_blank'>고객불만 처리센터</a><span>|</span><a href="http://pgweb.uplus.co.kr:8080/pg/wmp/etc/jsp/SettlementSearchr.jsp" target="_blank">신용카드 거래내역조회</a><span>|</span><a href="#null" onclick="window.open('/cs/customs_calc','calc','width=671,height=820,scrollbars=no')">관부가세 계산기</a><span>|</span><a href="http://help.interplanet.co.kr" target="_blank">유해상품신고센터</a></li>
-      <li class="bm_body">
-          <span class="bb_left"><img src="./images/renew160927/20160927_08.png"></span>
-          <span class="bb_right" style="color:#b2b2b2;font-size:8pt;">
-              상호 : <strong>(주)인터플래닛</strong>
-              <span class="bmslash">|</span>사업자등록번호 : 617-81-96322              <span class="bmslash">|</span>대표 : 채택규              <span class="bmslash">|</span>통신판매신고번호 : 2012-부산해운-0315			  <span class="bmslash">|</span>수입식품등 인터넷구매대행업 : 제 20160004408호
-			  <br>
+<!--    <ul>-->
+<!--      <li class="bm_menu"><a href="http://www.interplanet.co.kr" target="_blank">회사소개</a><span>|</span><a href="./company/terms">이용약관</a><span>|</span><a href="./company/private_all"><strong style="color:red">개인정보처리방침</strong></a><span>|</span><a href="./cs/use_info?md=1">이용안내</a><span>|</span><a href="mailto:help@interplanet.co.kr" target='_blank'>고객불만 처리센터</a><span>|</span><a href="http://pgweb.uplus.co.kr:8080/pg/wmp/etc/jsp/SettlementSearchr.jsp" target="_blank">신용카드 거래내역조회</a><span>|</span><a href="#null" onclick="window.open('/cs/customs_calc','calc','width=671,height=820,scrollbars=no')">관부가세 계산기</a><span>|</span><a href="http://help.interplanet.co.kr" target="_blank">유해상품신고센터</a></li>-->
+<!--      <li class="bm_body">-->
+<!--          <span class="bb_left"><img src="./images/renew160927/20160927_08.png"></span>-->
+<!--          <span class="bb_right" style="color:#b2b2b2;font-size:8pt;">-->
+<!--              상호 : <strong>(주)인터플래닛</strong>-->
+<!--              <span class="bmslash">|</span>사업자등록번호 : 617-81-96322              <span class="bmslash">|</span>대표 : 채택규              <span class="bmslash">|</span>통신판매신고번호 : 2012-부산해운-0315			  <span class="bmslash">|</span>수입식품등 인터넷구매대행업 : 제 20160004408호-->
+<!--			  <br>-->
 
-              주소 : 부산광역시 해운대구 센텀북대로 60, 709호 (재송동 센텀IS타워)              <span class="bmslash">|</span>화장품 제조판매업(수입대행형) : 제 8134 호
-              <span class="bmslash">|</span>특별통관대상업체 : 0001400011<br>
+<!--              주소 : 부산광역시 해운대구 센텀북대로 60, 709호 (재송동 센텀IS타워)              <span class="bmslash">|</span>화장품 제조판매업(수입대행형) : 제 8134 호-->
+<!--              <span class="bmslash">|</span>특별통관대상업체 : 0001400011<br>-->
 
-              <strong style='color:#484848'>대표전화 : 1644-9912</strong>
-              <span class="bmslash">|</span>FAX : 051-554-3949              <span class="bmslash">|</span>고객문의 : help@interplanet.co.kr              <span class="bmslash">|</span>제휴문의 : biz@interplanet.co.kr<br>
+<!--              <strong style='color:#484848'>대표전화 : 1644-9912</strong>-->
+<!--              <span class="bmslash">|</span>FAX : 051-554-3949              <span class="bmslash">|</span>고객문의 : help@interplanet.co.kr              <span class="bmslash">|</span>제휴문의 : biz@interplanet.co.kr<br>-->
 
-              <img src="./images/renew160927/20160927_09.png" style="margin:3px 4px 0 0;">일본물류센터 : 559-0034 大阪市 住之江区 南港北 2-1-10 ATC ITM棟 12階 D-2
-              <span class="copy">COPYRIGHT ⓒ2015 HEYJAPAN ALL RIGHTS RESERVED</span>
-			  <!-- <img src="./images/renew160927/20170426_woori.png" alt="" style="margin: -15px 5px 15px -3px;"/><a href="javascript:void(0);" class="woori_safety_btn" onclick='window.open("/pop/wooribank_guarantee.html", "woori_safety_service", "width=630, height=797, resizable=no, scrollbars=no, toolbars=no");' style="margin-top: -15px;">서비스 가입 확인▷</a> -->
-          </span>
-          <img src="./images/renew160927/20160927_10.png?v=2" usemap="#bottom_map2" style="cursor:pointer;">
-          <p>HEYJAPAN은 일본 경매대행, 구매대행 등의 입찰, 구매를 중계하고 국제배송을 대행하는 서비스를 제공하며, 상품의 이미지 및 등록내용, 진품여부 등에 대해서는 일체의 책임을 지지 않습니다.<br>
-HEYJAPAN은 관세법 등 관련규정을 준수하고 불법물품을 취급하지 않으며, 분할배송에 의한 가격허위신고등 구매자의 불법사항 요청에 대해 일체 협조하지 않습니다.</p>
-      </li>
-    </ul>
+<!--              <img src="./images/renew160927/20160927_09.png" style="margin:3px 4px 0 0;">일본물류센터 : 559-0034 大阪市 住之江区 南港北 2-1-10 ATC ITM棟 12階 D-2-->
+<!--              <span class="copy">COPYRIGHT ⓒ2015 HEYJAPAN ALL RIGHTS RESERVED</span>-->
+<!--			  &lt;!&ndash; <img src="./images/renew160927/20170426_woori.png" alt="" style="margin: -15px 5px 15px -3px;"/><a href="javascript:void(0);" class="woori_safety_btn" onclick='window.open("/pop/wooribank_guarantee.html", "woori_safety_service", "width=630, height=797, resizable=no, scrollbars=no, toolbars=no");' style="margin-top: -15px;">서비스 가입 확인▷</a> &ndash;&gt;-->
+<!--          </span>-->
+<!--          <img src="./images/renew160927/20160927_10.png?v=2" usemap="#bottom_map2" style="cursor:pointer;">-->
+<!--          <p>HEYJAPAN은 일본 경매대행, 구매대행 등의 입찰, 구매를 중계하고 국제배송을 대행하는 서비스를 제공하며, 상품의 이미지 및 등록내용, 진품여부 등에 대해서는 일체의 책임을 지지 않습니다.<br>-->
+<!--HEYJAPAN은 관세법 등 관련규정을 준수하고 불법물품을 취급하지 않으며, 분할배송에 의한 가격허위신고등 구매자의 불법사항 요청에 대해 일체 협조하지 않습니다.</p>-->
+<!--      </li>-->
+<!--    </ul>-->
 </div>
 
 <map name="bottom_map2">
@@ -1244,30 +1191,5 @@ window.onload = function(){
 }
 </script>
 
-<script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script>
-<script type="text/javascript">
-if (!wcs_add) var wcs_add={};
-wcs_add["wa"] = "s_22b09810eb30";
-if (!_nasa) var _nasa={};
-wcs.inflow();
-wcs_do(_nasa);
-</script>
-
-<!-- 회원별 팝업 시작 -->
-<!-- 회원별 팝업 끝 -->
-
 </body>
 </html>
-
-<script>
-//$(window).resize(function(){
-//	if(parseInt($(window).width()) >= 1400){
-//		$("#quickTapbox_table").show();
-//	}else{
-//		$("#quickTapbox_table").hide();
-//	}
-//});
-//if(window.outerWidth < 1400){
-//	$("#quickTapbox_table").hide();
-//}
-</script>
