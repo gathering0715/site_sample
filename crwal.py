@@ -1,7 +1,7 @@
 import os
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin, urlparse, urlsplit
+from urllib.parse import urljoin, urlparse
 
 # 디렉토리 생성 함수
 def ensure_directory(directory):
@@ -9,9 +9,9 @@ def ensure_directory(directory):
         os.makedirs(directory)
 
 # 파일 저장 함수
-def save_file(url, content, base_folder, relative_path):
+def save_file(content, base_folder, relative_path):
     folder = os.path.join(base_folder, os.path.dirname(relative_path))
-    ensure_directory(folder)  # 디렉토리 생성
+    ensure_directory(folder)
     file_path = os.path.join(base_folder, relative_path)
     with open(file_path, 'wb') as file:
         file.write(content)
@@ -20,28 +20,37 @@ def save_file(url, content, base_folder, relative_path):
 def get_relative_path(url, base_url):
     parsed_url = urlparse(url)
     base_parsed = urlparse(base_url)
-    if parsed_url.netloc != base_parsed.netloc:
+    if parsed_url.netloc and parsed_url.netloc != base_parsed.netloc:
         return None  # 외부 리소스 무시
     path = parsed_url.path.lstrip("/")
     if not path or path.endswith("/"):
         path += "index.html"  # 디렉토리 경로는 index.html로 저장
     return path
 
-def extract_images_from_css(css_content, css_url, base_url):
-    image_urls = []
-    for line in css_content.splitlines():
-        if "url(" in line:
-            start = line.find("url(") + 4
-            end = line.find(")", start)
-            if start != -1 and end != -1:
-                image_url = line[start:end].strip('"\'"')
-                image_url = urljoin(css_url, image_url)
-                if get_relative_path(image_url, base_url):
-                    image_urls.append(image_url)
-    return image_urls
+# HTML 파일 수정 및 저장 함수
+def save_html_with_updated_paths(html_content, target_url, output_folder):
+    soup = BeautifulSoup(html_content, 'lxml')
 
-# 특정 페이지에서 이미지 크롤링 함수
-def crawl_images(target_url, output_folder):
+    # 경로를 상대 경로로 변경
+    for tag, attr in [("script", "src"), ("img", "src"), ("link", "href")]:
+        for element in soup.find_all(tag):
+            url = element.get(attr)
+            if url:
+                new_url = urljoin(target_url, url)  # 절대 URL로 변환
+                relative_path = get_relative_path(new_url, target_url)
+                if relative_path:
+                    element[attr] = f"./{relative_path}"
+
+    # HTML 저장
+    relative_path = get_relative_path(target_url, target_url) or "index.html"
+    file_path = os.path.join(output_folder, relative_path)
+    ensure_directory(os.path.dirname(file_path))  # 디렉토리 생성
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(soup.prettify())
+    print(f"Saved HTML with updated paths: {file_path}")
+
+# 특정 페이지에서 리소스 크롤링 함수
+def crawl_page(target_url, output_folder):
     try:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
@@ -54,9 +63,11 @@ def crawl_images(target_url, output_folder):
 
     content_type = response.headers.get("Content-Type", "")
     if "text/html" in content_type:
-        soup = BeautifulSoup(response.text, "lxml")
+        # HTML 파일 저장
+        save_html_with_updated_paths(response.text, target_url, output_folder)
 
         # 이미지 파일 다운로드
+        soup = BeautifulSoup(response.text, "lxml")
         for element in soup.find_all("img"):
             img_url = element.get("src")
             if img_url:
@@ -68,12 +79,12 @@ def crawl_images(target_url, output_folder):
                         img_response.raise_for_status()
 
                         # 파일 저장
-                        save_file(img_url, img_response.content, output_folder, relative_path)
+                        save_file(img_response.content, output_folder, relative_path)
                         print(f"Saved image: {img_url}")
                     except requests.RequestException as e:
                         print(f"Failed to fetch image {img_url}: {e}")
 
-        # CSS 파일에서 이미지 추출 및 다운로드
+        # CSS 파일 다운로드 및 폰트 크롤링
         for element in soup.find_all("link", rel="stylesheet"):
             css_url = element.get("href")
             if css_url:
@@ -82,27 +93,37 @@ def crawl_images(target_url, output_folder):
                     css_response = requests.get(css_url, headers=headers)
                     css_response.raise_for_status()
 
-                    # CSS 파일에서 이미지 URL 추출
-                    css_images = extract_images_from_css(css_response.text, css_url, target_url)
-                    for img_url in css_images:
-                        relative_path = get_relative_path(img_url, target_url)
-                        if relative_path:  # 외부 리소스 무시
-                            try:
-                                img_response = requests.get(img_url, headers=headers)
-                                img_response.raise_for_status()
+                    # CSS 파일 저장
+                    relative_path = get_relative_path(css_url, target_url)
+                    if relative_path:
+                        save_file(css_response.content, output_folder, relative_path)
+                        print(f"Saved CSS: {css_url}")
 
-                                # 파일 저장
-                                save_file(img_url, img_response.content, output_folder, relative_path)
-                                print(f"Saved CSS image: {img_url}")
-                            except requests.RequestException as e:
-                                print(f"Failed to fetch CSS image {img_url}: {e}")
+                    # 폰트 파일 다운로드
+                    for line in css_response.text.splitlines():
+                        if "url(" in line:
+                            start = line.find("url(") + 4
+                            end = line.find(")", start)
+                            if start != -1 and end != -1:
+                                font_url = line[start:end].strip('"\'')
+                                font_url = urljoin(css_url, font_url)
+                                font_relative_path = get_relative_path(font_url, target_url)
+                                if font_relative_path:
+                                    try:
+                                        font_response = requests.get(font_url, headers=headers)
+                                        font_response.raise_for_status()
+                                        save_file(font_response.content, output_folder, font_relative_path)
+                                        print(f"Saved font: {font_url}")
+                                    except requests.RequestException as e:
+                                        print(f"Failed to fetch font {font_url}: {e}")
                 except requests.RequestException as e:
                     print(f"Failed to fetch CSS file {css_url}: {e}")
+
 # 실행
 def main():
-    target_url = "https://heyjapan.co.kr/"  # 크롤링할 특정 페이지
+    target_url = "https://heyjapan.co.kr/category?shop_id=amazon_jp"  # 크롤링할 특정 페이지
     output_folder = "output"  # 저장할 폴더
-    crawl_images(target_url, output_folder)
+    crawl_page(target_url, output_folder)
 
 if __name__ == "__main__":
     main()

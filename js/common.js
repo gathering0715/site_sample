@@ -885,7 +885,7 @@ function web_detail(url){
 	SLB('/images/712.gif', 'image', true);
 
 	// 가상의 이미지 객체를 바인딩 후 이동
-	var $img = $('<img src="/images/712.gif" />');
+	var $img = $('<img src="./images/712.gif" />');
 	$img.bind('load', function(){
 		//location.href=url;
 		location.replace(url);
@@ -899,7 +899,7 @@ function web_detail2(url){
 
 	// 241029 미작동, 미사용으로 주석처리
 	// // 가상의 이미지 객체를 바인딩 후 이동
-	// var $img = $('<img src="/images/712.gif" />');
+	// var $img = $('<img src="./images/712.gif" />');
 	// $img.bind('load', function(){
 	// 	//location.href=url;
 	// 	location.replace(url);
@@ -1197,7 +1197,7 @@ function del_local_Array(key, value){
 	var recent_searches_html = '';
 	for(let r = 0; r < tmp.length; r++){
 		recent_searches_html += "<li><a href='/hey/search?keyword="+tmp[r]+"&type=buy' title='"+tmp[r]+"'>"+sliceByByte(tmp[r], '12', '')+"</a>";
-		recent_searches_html += "<a onclick=\"del_local_Array('search','"+tmp[r]+"')\"><img src=\"/images/integ/ns_close.png\"></a></li>";
+		recent_searches_html += "<a onclick=\"del_local_Array('search','"+tmp[r]+"')\"><img src=\"./images/integ/ns_close.png\"></a></li>";
 		$('.ns_keyword').html(recent_searches_html);
 		$('.ns_alldel').show();
 	}

@@ -591,11 +591,11 @@ $(function(){
 		$(activeTab).show();
 
 		if(activeTab == '#tab1') {
-			$("#tab1_img").attr("src" , "/images/integ/s_cate09_on.gif");
-			$("#tab2_img").attr("src" , "/images/integ/s_cate10.gif");
+			$("#tab1_img").attr("src" , "./images/integ/s_cate09_on.gif");
+			$("#tab2_img").attr("src" , "./images/integ/s_cate10.gif");
 		}else{
-			$("#tab1_img").attr("src" , "/images/integ/s_cate09.gif");
-			$("#tab2_img").attr("src" , "/images/integ/s_cate10_on.gif");
+			$("#tab1_img").attr("src" , "./images/integ/s_cate09.gif");
+			$("#tab2_img").attr("src" , "./images/integ/s_cate10_on.gif");
 		}
 		return false;
 	});
