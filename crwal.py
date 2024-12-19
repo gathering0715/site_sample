@@ -121,7 +121,7 @@ def crawl_page(target_url, output_folder):
 
 # 실행
 def main():
-    target_url = "https://heyjapan.co.kr/category?shop_id=amazon_jp"  # 크롤링할 특정 페이지
+    target_url = "https://heyjapan.co.kr/deal/deail?url=B0B3R5PL2Y&shop_id=amazon_jp"  # 크롤링할 특정 페이지
     output_folder = "output"  # 저장할 폴더
     crawl_page(target_url, output_folder)
 

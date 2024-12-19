@@ -3804,14 +3804,14 @@ a.rollover:hover img.rollover{ display:inline; }
 /* 190724 1엔샵 */
  #yenauction{background: #fff;  margin:0 auto; font-family: 'Noto Sans KR',san-serif; font-size: 12px;}
 .ya_top{ position: relative; background: #ffd842; height: 319px;}
-.ya_top .ya_top_head{background: url("./images/1yen/190724_01.png") no-repeat center 0; background-size: cover;   height: 319px; min-width: 1182px}
+.ya_top .ya_top_head{background: url("/images/1yen/190724_01.png") no-repeat center 0; background-size: cover;   height: 319px; min-width: 1182px}
 .ya_top .ya_top_head .hth_inner{width: 1182px; margin: 0 auto;}
-.ya_top .ya_top_head .hth_inner h1{width: 714px; height: 150px; background: url("./images/1yen/190724_09.png") no-repeat 0 30px; margin-left:0; padding-top: 39px;  }
+.ya_top .ya_top_head .hth_inner h1{width: 714px; height: 150px; background: url("/images/1yen/190724_09.png") no-repeat 0 30px; margin-left:0; padding-top: 39px;  }
 .ya_top .ya_top_head .hth_inner h2{color: #000; font-size: 18px;  letter-spacing:-0.25px; margin-top: 0px; display: block; text-indent: 33px; font-weight: normal; line-height: 25px;}
 .ya_top .ya_top_head .hth_inner .hth_inner_in{width: 943px; margin:14px auto 0 auto;}
 .ya_top .ya_top_head .hth_inner .input_hth_search{ width:724px; height: 63px; border: none; border-top-left-radius: 5px; border-bottom-left-radius: 5px; text-indent:20px; font-size: 15px; float: left; box-sizing: border-box}
 .ya_top .ya_top_head .hth_inner .icon_hth_search{float: left; text-indent: 0; margin-left: -1px;}
-.ya_top .ya_top_head .hth_inner .hth_cate{float: left; text-indent: 0; border-radius: 5px; width:142px; height: 63px; display: block; background: #fff;  text-align: center; line-height: 63px; font-size: 16px; margin-left: 16px; background: url("./images/1yen/190724_05.png") no-repeat; text-indent: 15px}
+.ya_top .ya_top_head .hth_inner .hth_cate{float: left; text-indent: 0; border-radius: 5px; width:142px; height: 63px; display: block; background: #fff;  text-align: center; line-height: 63px; font-size: 16px; margin-left: 16px; background: url("/images/1yen/190724_05.png") no-repeat; text-indent: 15px}
 .ya_top .ya_top_head .hth_inner .hth_cate a{ color: #2b3139; text-decoration: none; display: block;}
 .ya_top .ya_top_head .hth_inner .hth_inner_in:after{clear: both; display: block; content: '';}
 .ya_top .ya_top_head .hth_inner .hth_inner_in .hth_cate_list{position: relative; width: 579px; display: none; right: 0; float: right}
@@ -3830,7 +3830,7 @@ a.rollover:hover img.rollover{ display:inline; }
 .ya_keyword li a{color: #fff; text-decoration: none; display: block;}
 
 .ya_bottom{position: relative; max-width: 1820px; margin: 0 auto; width: 100%; min-width: 1182px;}
-.yb_top{background: url("./images/1yen/190724_10.png") no-repeat center 0; background-size: cover; border-bottom: 2px solid #676767; height: 107px;padding-left:50px;padding-right:50px}
+.yb_top{background: url("/images/1yen/190724_10.png") no-repeat center 0; background-size: cover; border-bottom: 2px solid #676767; height: 107px;padding-left:50px;padding-right:50px}
 .yb_top .yt_li1{float: left;color: #e7245c; margin-top: 37px}
 .yb_top .yt_li1 p{color: #222222; font-size: 25px; font-weight: bold; letter-spacing: -1.2px; margin-top: 8px}
 .yb_top .yt_li2{float: left; color: #000000; font-size: 14px; margin: 68px 0 0 35px}
@@ -3859,16 +3859,16 @@ a.rollover:hover img.rollover{ display:inline; }
     height:26px;
     margin:-2px 9px 0 0;
     vertical-align:middle;
-    background:url("./images/1yen/check_radio_sheet.png") left top no-repeat;
+    background:url("/images/1yen/check_radio_sheet.png") left top no-repeat;
     cursor:pointer;
 }
 
 .ym_1 input[type="checkbox"]:checked + label span {
-    background:url("./images/1yen/check_radio_sheet.png") right top no-repeat;
+    background:url("/images/1yen/check_radio_sheet.png") right top no-repeat;
 }
 
 .yb_middle .ym_2{float: right; margin-top: 16px}
-.yb_middle .ym_2 .ym_select{background: url("./images/1yen/190724_04.png") no-repeat; width: 181px; height: 32px; border: 1px solid #e4e4e4;background-color: #fff; }
+.yb_middle .ym_2 .ym_select{background: url("/images/1yen/190724_04.png") no-repeat; width: 181px; height: 32px; border: 1px solid #e4e4e4;background-color: #fff; }
 .yb_middle .ym_2 .ym_select .ym_label{position: relative; color: #666;padding-left: 55px; font-size: 14px;font-weight: bold; text-decoration: none; line-height: 32px; display: block;}
 .yb_middle .ym_2 .ym_select .depth1{position: relative; width:181px; height:66px;  background: #fff; border-left: 1px solid #e4e4e4; border-right: 1px solid #e4e4e4; border-top: 1px solid #e4e4e4;z-index: 1;  display: block; left:-1px; display: none}
 .yb_middle .ym_2 .ym_select .depth1 li{border-bottom: 1px solid #e4e4e4; display: block; text-align: center; line-height:32px;}
