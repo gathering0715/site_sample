@@ -4339,3 +4339,6 @@ a.rollover:hover img.rollover{ display:inline; }
   background-color: #fff;
   border: 1px solid #d6d6d6;
 }
+#bottom{
+    display:none;
+}
